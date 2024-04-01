@@ -4,7 +4,9 @@ import { nanoid } from 'nanoid';
 
 const contactsSlice = createSlice({
   name: 'contacts',
-  initialState: [],
+  initialState: {
+    items: [],
+  },
   reducers: {
     deleteContact: (state, action) => {
       return state.filter(contact => contact.id !== action.payload);
