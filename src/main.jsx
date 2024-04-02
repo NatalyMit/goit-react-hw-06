@@ -4,15 +4,15 @@ import 'modern-normalize';
 import App from './App.jsx';
 import './index.css';
 import { Provider } from 'react-redux';
-import { persistor, store } from './redux/store';
+import store, { persistor } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <PersistGate loading={null} persistor={persistor}>
-      <Provider store={store}>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
         <App />
-      </Provider>
-    </PersistGate>
+      </PersistGate>
+    </Provider>
   </React.StrictMode>
 );
